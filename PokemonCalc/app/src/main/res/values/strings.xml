@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PokemonCalc</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_calculator">Calculator</string>
+    <string name="title_activity_type">Type</string>
+    <string name="title_activity_credits">Credits</string>
+</resources>
