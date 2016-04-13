@@ -12,61 +12,91 @@
     tools:context="com.example.david.pokemoncalc.Home"
     tools:showIn="@layout/activity_home">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/RedBlueSprite"
-        android:id="@+id/imageView"
-        android:layout_marginBottom="97dp"
-        android:layout_alignBottom="@+id/Calc"
-        android:layout_alignRight="@+id/Calc"
-        android:layout_alignEnd="@+id/Calc"
-        android:layout_alignLeft="@+id/Calc"
-        android:layout_alignStart="@+id/Calc" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calculator"
-        android:id="@+id/Calc"
-        android:layout_marginBottom="67dp"
-        android:layout_above="@+id/type"
-        android:layout_alignLeft="@+id/type"
-        android:layout_alignStart="@+id/type"
-        android:layout_alignRight="@+id/type"
-        android:layout_alignEnd="@+id/type" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Type Comparer"
-        android:id="@+id/type"
-        android:layout_marginBottom="68dp"
-        android:layout_above="@+id/credits"
-        android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Credits"
-        android:id="@+id/credits"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/type"
-        android:layout_alignStart="@+id/type"
-        android:layout_marginBottom="93dp"
-        android:layout_alignRight="@+id/type"
-        android:layout_alignEnd="@+id/type" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="             Pokemon Calculator"
-        android:id="@+id/textView"
-        android:layout_alignBottom="@+id/Calc"
-        android:layout_marginBottom="56dp"
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:src="@drawable/RedBlueSprite"
+            android:id="@+id/imageView"
+            android:layout_marginBottom="0dp"
+            android:layout_alignBottom="@+id/Calc"
+            android:layout_alignRight="@+id/Calc"
+            android:layout_alignEnd="@+id/Calc"
+            android:layout_alignLeft="@+id/Calc"
+            android:layout_alignStart="@+id/Calc"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="367dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="             Pokemon Calculator"
+            android:id="@+id/textView"
+            android:layout_alignBottom="@+id/Calc"
+            android:layout_marginBottom="56dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_weight="0.06" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculator"
+            android:id="@+id/Calc"
+            android:layout_marginBottom="67dp"
+            android:layout_above="@+id/type"
+            android:layout_alignLeft="@+id/type"
+            android:layout_alignStart="@+id/type"
+            android:layout_alignRight="@+id/type"
+            android:layout_alignEnd="@+id/type"
+            android:layout_row="7"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type Comparer"
+            android:id="@+id/type"
+            android:layout_marginBottom="68dp"
+            android:layout_above="@+id/credits"
+            android:layout_centerHorizontal="true"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credits"
+            android:id="@+id/credits"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/type"
+            android:layout_alignStart="@+id/type"
+            android:layout_marginBottom="93dp"
+            android:layout_alignRight="@+id/type"
+            android:layout_alignEnd="@+id/type"
+            android:layout_row="9"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
 
 </RelativeLayout>
