@@ -13,39 +13,33 @@
     tools:showIn="@layout/activity_home">
 
 
+    <ImageView
+        android:layout_width="1000dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pokeball"
+        android:id="@+id/imageView2"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        />
 
     <LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:weightSum="1">
-
-        <ImageView
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            android:src="@drawable/RedBlueSprite"
-            android:id="@+id/imageView"
-            android:layout_marginBottom="0dp"
-            android:layout_alignBottom="@+id/Calc"
-            android:layout_alignRight="@+id/Calc"
-            android:layout_alignEnd="@+id/Calc"
-            android:layout_alignLeft="@+id/Calc"
-            android:layout_alignStart="@+id/Calc"
-            android:layout_row="3"
-            android:layout_column="1"
-            android:layout_gravity="center_horizontal" />
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="25"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:layout_width="367dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="             Pokemon Calculator"
+            android:textColor="#0000cc"
+            android:text="              Pokemon Calculator"
             android:id="@+id/textView"
             android:layout_alignBottom="@+id/Calc"
-            android:layout_marginBottom="56dp"
+            android:layout_marginTop="75dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
@@ -53,7 +47,7 @@
             android:layout_row="5"
             android:layout_column="0"
             android:layout_columnSpan="2"
-            android:layout_weight="0.06" />
+            android:layout_weight="0.70" />
 
         <Button
             android:layout_width="wrap_content"
