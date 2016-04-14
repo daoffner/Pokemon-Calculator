@@ -31,7 +31,8 @@ public class Calculator extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Calculator.this, Home.class));
+                finish();
+                //startActivity(new Intent(Calculator.this, Home.class));
             }
         });
 
