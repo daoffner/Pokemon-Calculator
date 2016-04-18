@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -28,43 +29,87 @@ public class Calculator extends AppCompatActivity {
         calcButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int hp = 0;
-                int atk = 0;
-                int def = 0;
-                int spAtk = 0;
-                int spDef = 0;
-                int speed = 0;
+                int hp, atk, def, spAtk, spDef, speed;
+                double baseHp, baseAtk, baseDef, baseSpAtk, baseSpDef, baseSpeed, lvl;
+                double evHp, evAtk, evDef, evSpAtk, evSpDef, evSpeed;
+                double ivHp, ivAtk, ivDef, ivSpAtk, ivSpDef, ivSpeed;
+
+                EditText num1 = (EditText) findViewById(R.id.baseHp) ;
+                baseHp = Integer.parseInt(num1.getText().toString());
+                EditText num2 = (EditText) findViewById(R.id.evHp) ;
+                evHp = Integer.parseInt(num2.getText().toString());
+                EditText num3 = (EditText) findViewById(R.id.ivHp) ;
+                ivHp = Integer.parseInt(num3.getText().toString());
+                EditText num4 = (EditText) findViewById(R.id.lvl) ;
+                lvl = Integer.parseInt(num4.getText().toString());
 
                 StatsCalculator calculator = new StatsCalculator();
-                hp = calculator.calcHp(R.id.baseHp, R.id.evHp, R.id.ivHp, R.id.lvl);
-                atk = calculator.calcStat(R.id.baseAtk, R.id.evAtk, R.id.ivAtk, R.id.lvl);
-                def = calculator.calcStat(R.id.baseDef, R.id.evDef, R.id.ivDef, R.id.lvl);
-                spAtk = calculator.calcStat(R.id.baseSpAtk, R.id.evSpAtk, R.id.ivSpAtk, R.id.lvl);
-                spDef = calculator.calcStat(R.id.baseSpDef, R.id.evSpDef, R.id.ivSpDef, R.id.lvl);
-                speed = calculator.calcStat(R.id.baseSpeed, R.id.evSpeed, R.id.ivSpeed, R.id.lvl);
+                hp = calculator.calcHp(baseHp, evHp, ivHp, lvl);
+
+                num1 = (EditText) findViewById(R.id.baseAtk) ;
+                baseAtk = Integer.parseInt(num1.getText().toString());
+                num2 = (EditText) findViewById(R.id.evAtk) ;
+                evAtk = Integer.parseInt(num2.getText().toString());
+                num3 = (EditText) findViewById(R.id.ivAtk) ;
+                ivAtk = Integer.parseInt(num3.getText().toString());
+                atk = calculator.calcStat(baseAtk, evAtk, ivAtk, lvl);
+
+                num1 = (EditText) findViewById(R.id.baseDef) ;
+                baseDef = Integer.parseInt(num1.getText().toString());
+                num2 = (EditText) findViewById(R.id.evDef) ;
+                evDef = Integer.parseInt(num2.getText().toString());
+                num3 = (EditText) findViewById(R.id.ivDef) ;
+                ivDef = Integer.parseInt(num3.getText().toString());
+                def = calculator.calcStat(baseDef, evDef, ivDef, lvl);
+
+                num1 = (EditText) findViewById(R.id.baseSpAtk) ;
+                baseSpAtk = Integer.parseInt(num1.getText().toString());
+                num2 = (EditText) findViewById(R.id.evSpAtk) ;
+                evSpAtk = Integer.parseInt(num2.getText().toString());
+                num3 = (EditText) findViewById(R.id.ivSpAtk) ;
+                ivSpAtk = Integer.parseInt(num3.getText().toString());
+                spAtk = calculator.calcStat(baseSpAtk, evSpAtk, ivSpAtk, lvl);
+
+                num1 = (EditText) findViewById(R.id.baseSpDef) ;
+                baseSpDef = Integer.parseInt(num1.getText().toString());
+                num2 = (EditText) findViewById(R.id.evSpDef) ;
+                evSpDef = Integer.parseInt(num2.getText().toString());
+                num3 = (EditText) findViewById(R.id.ivSpDef) ;
+                ivSpDef = Integer.parseInt(num3.getText().toString());
+                spDef = calculator.calcStat(baseSpDef, evSpDef, ivSpDef, lvl);
+
+                num1 = (EditText) findViewById(R.id.baseSpeed) ;
+                baseSpeed = Integer.parseInt(num1.getText().toString());
+                num2 = (EditText) findViewById(R.id.evSpeed) ;
+                evSpeed = Integer.parseInt(num2.getText().toString());
+                num3 = (EditText) findViewById(R.id.ivSpeed) ;
+                ivSpeed = Integer.parseInt(num3.getText().toString());
+                speed = calculator.calcStat(baseSpeed, evSpeed, ivSpeed, lvl);
+
                 temp = (TextView) findViewById(R.id.finalHp);
                 if (temp != null) {
-                    temp.setText(hp);
+
+                    temp.setText(hp + "");
                 }
                 temp = (TextView) findViewById(R.id.finalAtk);
                 if (temp != null) {
-                    temp.setText(atk);
+                    temp.setText(atk + "");
                 }
                 temp = (TextView) findViewById(R.id.finalDef);
                 if (temp != null) {
-                    temp.setText(def);
+                    temp.setText(def + "");
                 }
                 temp = (TextView) findViewById(R.id.finalSpAtk);
                 if (temp != null) {
-                    temp.setText(spAtk);
+                    temp.setText(spAtk + "");
                 }
                 temp = (TextView) findViewById(R.id.finalSpDef);
                 if (temp != null) {
-                    temp.setText(spDef);
+                    temp.setText(spDef + "");
                 }
                 temp = (TextView) findViewById(R.id.finalSpeed);
                 assert temp != null;
-                    temp.setText(speed);
+                temp.setText(speed+"");
 
             }
         });

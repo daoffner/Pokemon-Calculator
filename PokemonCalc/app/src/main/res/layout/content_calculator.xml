@@ -12,36 +12,58 @@
     tools:context="com.example.david.pokemoncalc.Calculator"
     tools:showIn="@layout/activity_calculator">
 
-
+    <ImageView
+        android:layout_width="1000dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/Pika"
+        android:id="@+id/imageView2"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        />
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="400dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:columnCount="5"
+        android:id="@+id/gridLayout">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="    IV"
+            android:text="  IV"
             android:id="@+id/textView11"
             android:layout_row="0"
             android:layout_column="3" />
 
         <TextView
+            android:layout_width="61dp"
+            android:layout_height="49dp"
+            android:textColor="#5C3613"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Calc.                        Stats"
+            android:id="@+id/textView12"
+            android:layout_row="0"
+            android:layout_column="4" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#5C3613"
             android:text="HP"
             android:id="@+id/textView2"
             android:layout_row="1"
             android:layout_column="0" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:layout_row="1"
@@ -49,8 +71,9 @@
             android:id="@+id/baseHp" />
 
         <EditText
-            android:layout_width="90dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/evHp"
@@ -58,8 +81,9 @@
             android:layout_column="2" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/ivHp"
@@ -69,6 +93,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/finalHp"
+            android:layout_row="1"
+            android:layout_column="4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Atk"
             android:id="@+id/textView3"
@@ -76,8 +110,9 @@
             android:layout_column="0" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/baseAtk"
@@ -85,8 +120,9 @@
             android:layout_column="1" />
 
         <EditText
-            android:layout_width="90dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/evAtk"
@@ -94,8 +130,9 @@
             android:layout_column="2" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/ivAtk"
@@ -105,6 +142,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/finalAtk"
+            android:layout_row="2"
+            android:layout_column="4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Def"
             android:id="@+id/textView4"
@@ -112,8 +159,9 @@
             android:layout_column="0" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/baseDef"
@@ -121,8 +169,9 @@
             android:layout_column="1" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/evDef"
@@ -130,8 +179,9 @@
             android:layout_column="2" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/ivDef"
@@ -141,6 +191,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/finalDef"
+            android:layout_row="3"
+            android:layout_column="4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Sp. Atk"
             android:id="@+id/textView5"
@@ -148,8 +208,9 @@
             android:layout_column="0" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="48dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/baseSpAtk"
@@ -157,8 +218,9 @@
             android:layout_column="1" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/evSpAtk"
@@ -166,8 +228,9 @@
             android:layout_column="2" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="51dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/ivSpAtk"
@@ -177,6 +240,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/finalSpAtk"
+            android:layout_row="4"
+            android:layout_column="4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Sp. Def"
             android:id="@+id/textView6"
@@ -184,8 +257,9 @@
             android:layout_column="0" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/baseSpDef"
@@ -193,8 +267,9 @@
             android:layout_column="1" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/evSpDef"
@@ -202,8 +277,9 @@
             android:layout_column="2" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="48dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/ivSpDef"
@@ -211,8 +287,9 @@
             android:layout_column="3" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="69dp"
+            android:layout_height="55dp"
+            android:textColor="#5C3613"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Base Stats"
             android:id="@+id/textView9"
@@ -222,6 +299,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/finalSpDef"
+            android:layout_row="5"
+            android:layout_column="4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Speed"
             android:id="@+id/textView7"
@@ -229,8 +316,9 @@
             android:layout_column="0" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="48dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/baseSpeed"
@@ -238,8 +326,9 @@
             android:layout_column="1" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/evSpeed"
@@ -247,8 +336,9 @@
             android:layout_column="2" />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/ivSpeed"
@@ -258,6 +348,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/finalSpeed"
+            android:layout_row="6"
+            android:layout_column="4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Level"
             android:id="@+id/textView8"
@@ -265,8 +365,9 @@
             android:layout_column="0" />
 
         <EditText
-            android:layout_width="90dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/lvl"
@@ -276,132 +377,37 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#5C3613"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="      EV"
+            android:text=" EV"
             android:id="@+id/textView10"
             android:layout_row="0"
             android:layout_column="2" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Calculate"
-            android:id="@+id/calc"
-            android:layout_row="8"
-            android:layout_column="1" />
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:text="Home"
-            android:id="@+id/home"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="45dp"
-            android:layout_row="8"
-            android:layout_column="2" />
-
-        <TextView
-            android:layout_width="43dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="HP"
-            android:id="@+id/textView12"
-            android:layout_row="9"
-            android:layout_column="0" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Atk"
-            android:id="@+id/textView13"
-            android:layout_row="9"
-            android:layout_column="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Def"
-            android:id="@+id/textView14"
-            android:layout_row="9"
-            android:layout_column="2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/finalHp"
-            android:layout_row="10"
-            android:layout_column="0" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/finalAtk"
-            android:layout_row="10"
-            android:layout_column="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/finalDef"
-            android:layout_row="10"
-            android:layout_column="2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="SpAtk"
-            android:id="@+id/textView15"
-            android:layout_row="11"
-            android:layout_column="0" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="SpDef"
-            android:id="@+id/textView20"
-            android:layout_row="11"
-            android:layout_column="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Speed"
-            android:id="@+id/textView21"
-            android:layout_row="11"
-            android:layout_column="2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/finalSpAtk"
-            android:layout_row="12"
-            android:layout_column="0" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/finalSpDef"
-            android:layout_row="12"
-            android:layout_column="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/finalSpeed"
-            android:layout_row="12"
-            android:layout_column="2" />
-
     </GridLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/calc"
+        android:layout_row="12"
+        android:layout_column="5"
+        android:layout_below="@+id/gridLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="83dp"
+        android:layout_marginStart="83dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:id="@+id/home"
+        android:layout_row="13"
+        android:layout_column="5"
+        android:layout_alignTop="@+id/calc"
+        android:layout_toRightOf="@+id/calc"
+        android:layout_toEndOf="@+id/calc" />
 </RelativeLayout>

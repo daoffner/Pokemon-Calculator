@@ -16,7 +16,7 @@
     <ImageView
         android:layout_width="1000dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/pokeball"
+        android:src="@drawable/Pika"
         android:id="@+id/imageView2"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
@@ -35,7 +35,7 @@
             android:layout_width="367dp"
             android:layout_height="50dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#0000cc"
+            android:textColor="#5C3613"
             android:text="              Pokemon Calculator"
             android:id="@+id/textView"
             android:layout_alignBottom="@+id/Calc"
