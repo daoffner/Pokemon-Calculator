@@ -28,26 +28,43 @@ public class Calculator extends AppCompatActivity {
         calcButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int hp = 0;
+                int atk = 0;
+                int def = 0;
+                int spAtk = 0;
+                int spDef = 0;
+                int speed = 0;
 
                 StatsCalculator calculator = new StatsCalculator();
-                int hp=calculator.calcHp(R.id.baseHp, R.id.evHp, R.id.ivHp, R.id.lvl);
-                int atk=calculator.calcStat(R.id.baseAtk, R.id.evAtk, R.id.ivAtk, R.id.lvl);
-                int def=calculator.calcStat(R.id.baseDef, R.id.evDef, R.id.ivDef, R.id.lvl);
-                int spAtk=calculator.calcStat(R.id.baseSpAtk, R.id.evSpAtk, R.id.ivSpAtk, R.id.lvl);
-                int spDef=calculator.calcStat(R.id.baseSpDef, R.id.evSpDef, R.id.ivSpDef, R.id.lvl);
-                int speed=calculator.calcStat(R.id.baseSpeed, R.id.evSpeed, R.id.ivSpeed, R.id.lvl);
-                temp= (TextView) findViewById(R.id.finalHp);
-                temp.setText(hp);
-                temp= (TextView) findViewById(R.id.finalAtk);
-                temp.setText(atk);
-                temp= (TextView) findViewById(R.id.finalDef);
-                temp.setText(def);
-                temp= (TextView) findViewById(R.id.finalSpAtk);
-                temp.setText(spAtk);
-                temp= (TextView) findViewById(R.id.finalSpDef);
-                temp.setText(spDef);
-                temp= (TextView) findViewById(R.id.finalSpeed);
-                temp.setText(speed);
+                hp = calculator.calcHp(R.id.baseHp, R.id.evHp, R.id.ivHp, R.id.lvl);
+                atk = calculator.calcStat(R.id.baseAtk, R.id.evAtk, R.id.ivAtk, R.id.lvl);
+                def = calculator.calcStat(R.id.baseDef, R.id.evDef, R.id.ivDef, R.id.lvl);
+                spAtk = calculator.calcStat(R.id.baseSpAtk, R.id.evSpAtk, R.id.ivSpAtk, R.id.lvl);
+                spDef = calculator.calcStat(R.id.baseSpDef, R.id.evSpDef, R.id.ivSpDef, R.id.lvl);
+                speed = calculator.calcStat(R.id.baseSpeed, R.id.evSpeed, R.id.ivSpeed, R.id.lvl);
+                temp = (TextView) findViewById(R.id.finalHp);
+                if (temp != null) {
+                    temp.setText(hp);
+                }
+                temp = (TextView) findViewById(R.id.finalAtk);
+                if (temp != null) {
+                    temp.setText(atk);
+                }
+                temp = (TextView) findViewById(R.id.finalDef);
+                if (temp != null) {
+                    temp.setText(def);
+                }
+                temp = (TextView) findViewById(R.id.finalSpAtk);
+                if (temp != null) {
+                    temp.setText(spAtk);
+                }
+                temp = (TextView) findViewById(R.id.finalSpDef);
+                if (temp != null) {
+                    temp.setText(spDef);
+                }
+                temp = (TextView) findViewById(R.id.finalSpeed);
+                assert temp != null;
+                    temp.setText(speed);
 
             }
         });
