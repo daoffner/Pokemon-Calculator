@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -30,60 +31,232 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int hp, atk, def, spAtk, spDef, speed;
-                double baseHp, baseAtk, baseDef, baseSpAtk, baseSpDef, baseSpeed, lvl;
-                double evHp, evAtk, evDef, evSpAtk, evSpDef, evSpeed;
-                double ivHp, ivAtk, ivDef, ivSpAtk, ivSpDef, ivSpeed;
+                double baseHp = 0, baseAtk = 0, baseDef = 0, baseSpAtk = 0, baseSpDef = 0, baseSpeed = 0, lvl = 0;
+                double evHp = 0, evAtk = 0, evDef = 0, evSpAtk = 0, evSpDef = 0, evSpeed = 0;
+                double ivHp = 0, ivAtk = 0, ivDef= 0, ivSpAtk = 0, ivSpDef = 0, ivSpeed = 0;
 
-                EditText num1 = (EditText) findViewById(R.id.baseHp) ;
-                baseHp = Integer.parseInt(num1.getText().toString());
-                EditText num2 = (EditText) findViewById(R.id.evHp) ;
-                evHp = Integer.parseInt(num2.getText().toString());
-                EditText num3 = (EditText) findViewById(R.id.ivHp) ;
-                ivHp = Integer.parseInt(num3.getText().toString());
-                EditText num4 = (EditText) findViewById(R.id.lvl) ;
-                lvl = Integer.parseInt(num4.getText().toString());
+                EditText num1 = (EditText) findViewById(R.id.baseHp);
+                if (num1 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else
+                    baseHp = Integer.parseInt(num1.getText().toString());
+
+                EditText num2 = (EditText) findViewById(R.id.evHp);
+                if (num2 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    evHp = Integer.parseInt(num2.getText().toString());
+                    if (evHp >= 255) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+
+                EditText num3 = (EditText) findViewById(R.id.ivHp);
+                if (num2 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    ivHp = Integer.parseInt(num3.getText().toString());
+                    if (ivHp >= 31) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+
+                EditText num4 = (EditText) findViewById(R.id.lvl);
+                if (num4 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else
+                    lvl = Integer.parseInt(num4.getText().toString());
 
                 StatsCalculator calculator = new StatsCalculator();
                 hp = calculator.calcHp(baseHp, evHp, ivHp, lvl);
 
-                num1 = (EditText) findViewById(R.id.baseAtk) ;
-                baseAtk = Integer.parseInt(num1.getText().toString());
-                num2 = (EditText) findViewById(R.id.evAtk) ;
-                evAtk = Integer.parseInt(num2.getText().toString());
-                num3 = (EditText) findViewById(R.id.ivAtk) ;
-                ivAtk = Integer.parseInt(num3.getText().toString());
+                num1 = (EditText) findViewById(R.id.baseAtk);
+                if (num1 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else
+                    baseAtk = Integer.parseInt(num1.getText().toString());
+
+                num2 = (EditText) findViewById(R.id.evAtk);
+                if (num2 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    evAtk = Integer.parseInt(num2.getText().toString());
+                    if (evAtk >= 255) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+
+                num3 = (EditText) findViewById(R.id.ivAtk);
+                if (num3 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    ivAtk = Integer.parseInt(num3.getText().toString());
+                    if (ivAtk >= 31) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+
                 atk = calculator.calcStat(baseAtk, evAtk, ivAtk, lvl);
 
-                num1 = (EditText) findViewById(R.id.baseDef) ;
-                baseDef = Integer.parseInt(num1.getText().toString());
-                num2 = (EditText) findViewById(R.id.evDef) ;
-                evDef = Integer.parseInt(num2.getText().toString());
-                num3 = (EditText) findViewById(R.id.ivDef) ;
-                ivDef = Integer.parseInt(num3.getText().toString());
+                num1 = (EditText) findViewById(R.id.baseDef);
+                if (num1 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else
+                    baseDef = Integer.parseInt(num1.getText().toString());
+
+                num2 = (EditText) findViewById(R.id.evDef);
+                if (num2 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    evDef = Integer.parseInt(num2.getText().toString());
+                    if (evDef >= 255) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+
+                num3 = (EditText) findViewById(R.id.ivDef);
+                if (num3 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    ivDef = Integer.parseInt(num3.getText().toString());
+                    if (ivDef >= 31) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+
                 def = calculator.calcStat(baseDef, evDef, ivDef, lvl);
 
-                num1 = (EditText) findViewById(R.id.baseSpAtk) ;
-                baseSpAtk = Integer.parseInt(num1.getText().toString());
-                num2 = (EditText) findViewById(R.id.evSpAtk) ;
-                evSpAtk = Integer.parseInt(num2.getText().toString());
-                num3 = (EditText) findViewById(R.id.ivSpAtk) ;
-                ivSpAtk = Integer.parseInt(num3.getText().toString());
+                num1 = (EditText) findViewById(R.id.baseSpAtk);
+                if (num1 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else
+                    baseSpAtk = Integer.parseInt(num1.getText().toString());
+
+                num2 = (EditText) findViewById(R.id.evSpAtk);
+                if (num2 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    evSpAtk = Integer.parseInt(num2.getText().toString());
+                    if (evSpAtk >= 255) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+
+                num3 = (EditText) findViewById(R.id.ivSpAtk);
+                if (num3 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    ivSpAtk = Integer.parseInt(num3.getText().toString());
+                    if (ivSpAtk >= 31) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+
                 spAtk = calculator.calcStat(baseSpAtk, evSpAtk, ivSpAtk, lvl);
 
-                num1 = (EditText) findViewById(R.id.baseSpDef) ;
-                baseSpDef = Integer.parseInt(num1.getText().toString());
-                num2 = (EditText) findViewById(R.id.evSpDef) ;
-                evSpDef = Integer.parseInt(num2.getText().toString());
-                num3 = (EditText) findViewById(R.id.ivSpDef) ;
-                ivSpDef = Integer.parseInt(num3.getText().toString());
+                num1 = (EditText) findViewById(R.id.baseSpDef);
+                if (num1 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else
+                    baseSpDef = Integer.parseInt(num1.getText().toString());
+
+                num2 = (EditText) findViewById(R.id.evSpDef);
+                if (num2 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    evSpDef = Integer.parseInt(num2.getText().toString());
+                    if (evSpDef >= 255) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+
+                num3 = (EditText) findViewById(R.id.ivSpDef);
+                if (num3 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    ivSpDef = Integer.parseInt(num3.getText().toString());
+                    if (ivSpDef >= 31) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+
                 spDef = calculator.calcStat(baseSpDef, evSpDef, ivSpDef, lvl);
 
-                num1 = (EditText) findViewById(R.id.baseSpeed) ;
-                baseSpeed = Integer.parseInt(num1.getText().toString());
-                num2 = (EditText) findViewById(R.id.evSpeed) ;
-                evSpeed = Integer.parseInt(num2.getText().toString());
-                num3 = (EditText) findViewById(R.id.ivSpeed) ;
-                ivSpeed = Integer.parseInt(num3.getText().toString());
+                num1 = (EditText) findViewById(R.id.baseSpeed);
+                if (num1 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else
+                    baseSpeed = Integer.parseInt(num1.getText().toString());
+
+                num2 = (EditText) findViewById(R.id.evSpeed);
+                if (num2 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    evSpeed = Integer.parseInt(num2.getText().toString());
+                    if (evSpeed >= 255) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 255.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+                num3 = (EditText) findViewById(R.id.ivSpeed);
+                if (num3 == null) {
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else {
+                    ivSpeed = Integer.parseInt(num3.getText().toString());
+                    if (ivSpeed >= 31) {
+                        Toast t = Toast.makeText(Calculator.this, "Must enter a number greater than 0 but less than 31.", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+
                 speed = calculator.calcStat(baseSpeed, evSpeed, ivSpeed, lvl);
 
                 temp = (TextView) findViewById(R.id.finalHp);
@@ -109,7 +282,7 @@ public class Calculator extends AppCompatActivity {
                 }
                 temp = (TextView) findViewById(R.id.finalSpeed);
                 assert temp != null;
-                temp.setText(speed+"");
+                temp.setText(speed + "");
 
             }
         });
