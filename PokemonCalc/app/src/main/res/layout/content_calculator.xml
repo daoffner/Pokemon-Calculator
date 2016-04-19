@@ -15,7 +15,7 @@
     <ImageView
         android:layout_width="1000dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/pika"
+        android:src="@drawable/pikachu"
         android:id="@+id/imageView2"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
@@ -91,7 +91,9 @@
             android:ems="10"
             android:id="@+id/ivHp"
             android:layout_row="1"
-            android:layout_column="3" />
+            android:layout_column="3"
+            android:allowUndo="false"
+            android:autoText="true" />
 
         <TextView
             android:layout_width="wrap_content"
