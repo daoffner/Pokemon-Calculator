@@ -24,11 +24,11 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:columnCount="5"
-        android:id="@+id/gridLayout">
+        android:id="@+id/gridLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -74,7 +74,7 @@
         <EditText
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -85,7 +85,7 @@
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -117,7 +117,7 @@
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -128,7 +128,7 @@
         <EditText
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -139,12 +139,13 @@
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/ivAtk"
             android:layout_row="2"
-            android:layout_column="3" />
+            android:layout_column="3"
+            android:text="0" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -168,7 +169,7 @@
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -179,7 +180,7 @@
         <EditText
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -190,7 +191,7 @@
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -220,7 +221,7 @@
         <EditText
             android:layout_width="48dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -231,7 +232,7 @@
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -242,7 +243,7 @@
         <EditText
             android:layout_width="51dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -272,7 +273,7 @@
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -283,7 +284,7 @@
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -294,7 +295,7 @@
         <EditText
             android:layout_width="48dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -334,7 +335,7 @@
         <EditText
             android:layout_width="48dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -345,7 +346,7 @@
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -356,7 +357,7 @@
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
             android:text="0"
             android:ems="10"
@@ -386,9 +387,9 @@
         <EditText
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:textColor="#5C3613"
+            android:textColor="#E92929"
             android:inputType="number"
-            android:text="0"
+            android:text="1"
             android:ems="10"
             android:id="@+id/lvl"
             android:layout_row="7"
@@ -413,11 +414,12 @@
         android:id="@+id/calc"
         android:layout_row="12"
         android:layout_column="5"
+        android:layout_marginLeft="69dp"
+        android:layout_marginStart="69dp"
+        android:textColor="#5C3613"
         android:layout_below="@+id/gridLayout"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="83dp"
-        android:layout_marginStart="83dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -427,7 +429,50 @@
         android:id="@+id/home"
         android:layout_row="13"
         android:layout_column="5"
-        android:layout_alignTop="@+id/calc"
+        android:textColor="#5C3613"
+        android:layout_above="@+id/textView13"
         android:layout_toRightOf="@+id/calc"
         android:layout_toEndOf="@+id/calc" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView13"
+        android:layout_below="@+id/calc"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignEnd="@+id/imageView2"
+        android:text="The EV collumn must be in a range from 0-255"
+        android:textSize="15dp"
+        android:textColor="#E92929" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="The IV column must be in te range of 0-31"
+        android:id="@+id/textView14"
+        android:layout_below="@+id/textView13"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignEnd="@+id/imageView2"
+        android:textSize="15dp"
+        android:textColor="#E92929" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="All fields must have a value"
+        android:id="@+id/textView15"
+        android:layout_below="@+id/textView14"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignEnd="@+id/imageView2"
+        android:textSize="15dp"
+        android:textColor="#E92929" />
 </RelativeLayout>
