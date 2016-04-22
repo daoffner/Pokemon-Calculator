@@ -6,9 +6,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +22,7 @@ public class Calculator extends AppCompatActivity {
 
     private Button homeButton;
     private Button calcButton;
+    private Spinner ability;
     private TextView temp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +30,29 @@ public class Calculator extends AppCompatActivity {
         setContentView(R.layout.activity_calculator);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //http://www.ahotbrew.com/android-dropdown-spinner-example/
+        //start
+        ability= (Spinner) findViewById(R.id.spinner);
+        String[] abilities= new String[] {
+                "Adament","Bashful","Bold","Brave","Calm","Careful"
+                ,"Docile","Gentle","Hardy","Hasty","Impish","Jolly"
+                ,"Lax","Lonely","Mild","Modest","Naive","Naughty"
+                ,"Quiet","Quirky","Rash","Relaxed","Sassy","Serious"
+                ,"Timid"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, abilities);
+        ability.setAdapter(adapter);
+        ability.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Log.v("ability", (String) parent.getItemAtPosition(position));
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        //end
         calcButton = (Button) findViewById(R.id.calc);
         calcButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -405,6 +405,22 @@
             android:layout_row="0"
             android:layout_column="2" />
 
+        <Spinner
+            android:layout_width="142dp"
+            android:layout_height="36dp"
+            android:id="@+id/spinner"
+            android:layout_row="7"
+            android:layout_column="4"
+            android:spinnerMode="dropdown"
+            android:layout_alignBaseline="@+id/calc"
+            android:layout_alignBottom="@+id/calc"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/calc"
+            android:layout_toStartOf="@+id/calc"
+            android:contextClickable="false" />
+
+
     </GridLayout>
 
     <Button
@@ -414,12 +430,10 @@
         android:id="@+id/calc"
         android:layout_row="12"
         android:layout_column="5"
-        android:layout_marginLeft="69dp"
-        android:layout_marginStart="69dp"
         android:textColor="#5C3613"
-        android:layout_below="@+id/gridLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignTop="@+id/home"
+        android:layout_toLeftOf="@+id/home"
+        android:layout_toStartOf="@+id/home" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -430,9 +444,11 @@
         android:layout_row="13"
         android:layout_column="5"
         android:textColor="#5C3613"
-        android:layout_above="@+id/textView13"
-        android:layout_toRightOf="@+id/calc"
-        android:layout_toEndOf="@+id/calc" />
+        android:layout_below="@+id/gridLayout"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_marginRight="31dp"
+        android:layout_marginEnd="31dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -475,4 +491,5 @@
         android:layout_alignEnd="@+id/imageView2"
         android:textSize="15dp"
         android:textColor="#E92929" />
+
 </RelativeLayout>
