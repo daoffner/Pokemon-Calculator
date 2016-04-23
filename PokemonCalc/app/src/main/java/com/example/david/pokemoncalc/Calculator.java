@@ -138,9 +138,7 @@ public class Calculator extends AppCompatActivity {
 
             );
             //end
-            calcButton=(Button)
-
-            findViewById(R.id.calc);
+            calcButton=(Button) findViewById(R.id.calc);
 
             calcButton.setOnClickListener(new View.OnClickListener()
 
@@ -416,20 +414,20 @@ public class Calculator extends AppCompatActivity {
                         temp.setText(spDef + "");
                     }
                     temp = (TextView) findViewById(R.id.finalSpeed);
-                    assert temp != null;
-                    temp.setText(speed + "");
+                    if (temp != null) {
+                        temp.setText(speed + "");
+                    }
                 } catch (Exception e) {
 
-                    System.out.print("Must enter a number no empty elements.");
+                    Toast t = Toast.makeText(Calculator.this, "Must enter a number. No empty elements.", Toast.LENGTH_LONG);
+                    t.show();
 
                 }
             }
             }
 
             );
-            homeButton=(Button)
-
-            findViewById(R.id.home);
+            homeButton=(Button) findViewById(R.id.home);
 
             homeButton.setOnClickListener(new View.OnClickListener()
 
@@ -437,7 +435,6 @@ public class Calculator extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     finish();
-                    //startActivity(new Intent(Calculator.this, Home.class));
                 }
             });
 

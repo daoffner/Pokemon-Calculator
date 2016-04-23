@@ -12,4 +12,93 @@
     tools:context="com.example.david.pokemoncalc.Credits"
     tools:showIn="@layout/activity_credits">
 
+    <ImageView
+        android:layout_width="1000dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pikachu"
+        android:id="@+id/imageView2"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Pokemon Calculator"
+        android:id="@+id/textView16"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Developed by"
+        android:id="@+id/textView17"
+        android:layout_marginTop="93dp"
+        android:textColor="#5C3613"
+        android:layout_below="@+id/textView22"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="   Ver. 1.0"
+        android:id="@+id/textView22"
+        android:layout_below="@+id/textView16"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Assisted by"
+        android:id="@+id/textView18"
+        android:layout_marginTop="132dp"
+        android:textColor="#5C3613"
+        android:layout_below="@+id/textView20"
+        android:layout_alignLeft="@+id/textView22"
+        android:layout_alignStart="@+id/textView22" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Wade Ashby"
+        android:id="@+id/textView19"
+        android:layout_below="@+id/textView18"
+        android:layout_centerHorizontal="true"
+        android:textColor="#E92929" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="David Offner"
+        android:id="@+id/textView20"
+        android:layout_below="@+id/textView17"
+        android:layout_centerHorizontal="true"
+        android:textColor="#E92929" />
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Thanks to the CSCI Department at HSU"
+        android:id="@+id/textView21"
+        android:textColor="#E92929"
+        android:layout_above="@+id/home"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:id="@+id/home"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#5C3613" />
 </RelativeLayout>
