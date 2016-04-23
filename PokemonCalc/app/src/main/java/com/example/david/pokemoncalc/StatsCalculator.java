@@ -9,8 +9,8 @@ public class StatsCalculator
    {
      return (int)((((2*base+iv+ev/4)*lvl)/100)+lvl+10);
    }
-   public int calcStat(double base,double ev,double iv, double lvl)
+   public int calcStat(double base,double ev,double iv, double lvl,double nat)
    {
-      return (int)((((2*base+iv+ev/4)*lvl)/100)+5);
+      return (int)(((((2*base+iv+ev/4)*lvl)/100)+5)*nat);
    }
 }

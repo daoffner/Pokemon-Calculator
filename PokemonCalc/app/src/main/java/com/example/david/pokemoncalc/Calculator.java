@@ -22,7 +22,7 @@ public class Calculator extends AppCompatActivity {
 
     private Button homeButton;
     private Button calcButton;
-    private Spinner ability;
+    private Spinner nature;
     private TextView temp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,33 +30,123 @@ public class Calculator extends AppCompatActivity {
         setContentView(R.layout.activity_calculator);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        final double[] natMulti= new double[] {1,1,1,1,1,1};
         //http://www.ahotbrew.com/android-dropdown-spinner-example/
         //start
-        ability= (Spinner) findViewById(R.id.spinner);
-        String[] abilities= new String[] {
-                "Adament","Bashful","Bold","Brave","Calm","Careful"
+        nature= (Spinner) findViewById(R.id.spinner);
+        String[] natures= new String[] {
+                "----V----","Adamant","Bashful","Bold","Brave","Calm","Careful"
                 ,"Docile","Gentle","Hardy","Hasty","Impish","Jolly"
                 ,"Lax","Lonely","Mild","Modest","Naive","Naughty"
                 ,"Quiet","Quirky","Rash","Relaxed","Sassy","Serious"
                 ,"Timid"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, abilities);
-        ability.setAdapter(adapter);
-        ability.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, natures);
+        nature.setAdapter(adapter);
+        nature.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Log.v("ability", (String) parent.getItemAtPosition(position));
+                Log.v("nature", (String) parent.getItemAtPosition(position));
+                for(int i=0; i<6; i++)
+                    natMulti[i]=1;
+                if (position == 1) {
+                    natMulti[1] = 1.1;
+                    natMulti[3] = .9;
+                }
+
+                if (position == 3) {
+                    natMulti[2] = 1.1;
+                    natMulti[1] = .9;
+                }
+                if (position == 4) {
+                    natMulti[1] = 1.1;
+                    natMulti[5] = .9;
+                }
+                if (position == 5) {
+                    natMulti[4] = 1.1;
+                    natMulti[1] = .9;
+                }
+                if (position == 6) {
+                    natMulti[4] = 1.1;
+                    natMulti[3] = .9;
+                }
+                if (position == 8) {
+                    natMulti[4] = 1.1;
+                    natMulti[2] = .9;
+                }
+                if (position == 10) {
+                    natMulti[5] = 1.1;
+                    natMulti[2] = .9;
+                }
+                if (position == 11) {
+                    natMulti[2] = 1.1;
+                    natMulti[3] = .9;
+                }
+                if (position == 12) {
+                    natMulti[5] = 1.1;
+                    natMulti[3] = .9;
+                }
+                if (position == 13) {
+                    natMulti[2] = 1.1;
+                    natMulti[4] = .9;
+                }
+                if (position == 14) {
+                    natMulti[1] = 1.1;
+                    natMulti[2] = .9;
+                }
+                if (position == 15) {
+                    natMulti[3] = 1.1;
+                    natMulti[2] = .9;
+                }
+                if (position == 16) {
+                    natMulti[3] = 1.1;
+                    natMulti[1] = .9;
+                }
+                if (position == 17) {
+                    natMulti[5] = 1.1;
+                    natMulti[4] = .9;
+                }
+                if (position == 18) {
+                    natMulti[1] = 1.1;
+                    natMulti[4] = .9;
+                }
+                if (position == 19) {
+                    natMulti[3] = 1.1;
+                    natMulti[5] = .9;
+                }
+                if (position == 21) {
+                    natMulti[3] = 1.1;
+                    natMulti[4] = .9;
+                }
+                if (position == 22) {
+                    natMulti[2] = 1.1;
+                    natMulti[5] = .9;
+                }
+                if (position == 23) {
+                    natMulti[4] = 1.1;
+                    natMulti[5] = .9;
+                }
+                if (position == 25) {
+                    natMulti[5] = 1.1;
+                    natMulti[1] = .9;
+                }
+            }
+                @Override
+                public void onNothingSelected (AdapterView < ? > parent){
+
+                }
             }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            );
+            //end
+            calcButton=(Button)
 
-            }
-        });
-        //end
-        calcButton = (Button) findViewById(R.id.calc);
-        calcButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            findViewById(R.id.calc);
+
+            calcButton.setOnClickListener(new View.OnClickListener()
+
+            {
+                @Override
+                public void onClick (View v){
                 int hp, atk, def, spAtk, spDef, speed;
                 double baseHp = 0, baseAtk = 0, baseDef = 0, baseSpAtk = 0, baseSpDef = 0, baseSpeed = 0, lvl = 0;
                 double evHp = 0, evAtk = 0, evDef = 0, evSpAtk = 0, evSpDef = 0, evSpeed = 0;
@@ -151,7 +241,7 @@ public class Calculator extends AppCompatActivity {
                         }
                     }
 
-                    atk = calculator.calcStat(baseAtk, evAtk, ivAtk, lvl);
+                    atk = calculator.calcStat(baseAtk, evAtk, ivAtk, lvl,natMulti[1]);
 
                     num1 = (EditText) findViewById(R.id.baseDef);
                     if (num1 == null) {
@@ -189,7 +279,7 @@ public class Calculator extends AppCompatActivity {
                         }
                     }
 
-                    def = calculator.calcStat(baseDef, evDef, ivDef, lvl);
+                    def = calculator.calcStat(baseDef, evDef, ivDef, lvl, natMulti[2]);
 
                     num1 = (EditText) findViewById(R.id.baseSpAtk);
                     if (num1 == null) {
@@ -227,7 +317,7 @@ public class Calculator extends AppCompatActivity {
                         }
                     }
 
-                    spAtk = calculator.calcStat(baseSpAtk, evSpAtk, ivSpAtk, lvl);
+                    spAtk = calculator.calcStat(baseSpAtk, evSpAtk, ivSpAtk, lvl, natMulti[3]);
 
                     num1 = (EditText) findViewById(R.id.baseSpDef);
                     if (num1 == null) {
@@ -265,7 +355,7 @@ public class Calculator extends AppCompatActivity {
                         }
                     }
 
-                    spDef = calculator.calcStat(baseSpDef, evSpDef, ivSpDef, lvl);
+                    spDef = calculator.calcStat(baseSpDef, evSpDef, ivSpDef, lvl, natMulti[4]);
 
                     num1 = (EditText) findViewById(R.id.baseSpeed);
                     if (num1 == null) {
@@ -302,7 +392,7 @@ public class Calculator extends AppCompatActivity {
                         }
                     }
 
-                    speed = calculator.calcStat(baseSpeed, evSpeed, ivSpeed, lvl);
+                    speed = calculator.calcStat(baseSpeed, evSpeed, ivSpeed, lvl, natMulti[5]);
 
                     temp = (TextView) findViewById(R.id.finalHp);
                     if (temp != null) {
@@ -334,15 +424,22 @@ public class Calculator extends AppCompatActivity {
 
                 }
             }
-        });
-        homeButton = (Button) findViewById(R.id.home);
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                //startActivity(new Intent(Calculator.this, Home.class));
             }
-        });
+
+            );
+            homeButton=(Button)
+
+            findViewById(R.id.home);
+
+            homeButton.setOnClickListener(new View.OnClickListener()
+
+            {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                    //startActivity(new Intent(Calculator.this, Home.class));
+                }
+            });
 
     }
 
