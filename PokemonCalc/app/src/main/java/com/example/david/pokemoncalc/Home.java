@@ -46,6 +46,9 @@ public class Home extends AppCompatActivity {
      */
     private GoogleApiClient client5;
 
+    /*
+    *Button Directory to navigate the app.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

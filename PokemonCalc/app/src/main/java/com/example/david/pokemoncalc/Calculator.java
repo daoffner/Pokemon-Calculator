@@ -20,22 +20,23 @@ import org.w3c.dom.Text;
 
 public class Calculator extends AppCompatActivity {
 
-    private Button homeButton;
-    private Button calcButton;
-    private Spinner nature;
-    private TextView temp;
+    private Button homeButton;  //button that takes the user to the home page
+    private Button calcButton;  //button that calulates the Pokemon's stats
+    private Spinner nature;     //drop down mwnue for selecting the Pokemon's nature
+    private TextView temp;      //temp variable to adjust the TextViews for the Pokemon's calculated stats
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        final double[] natMulti= new double[] {1,1,1,1,1,1};
+        final double[] natMulti= new double[] {1,1,1,1,1};    //nature multiplier for each stat
+
         //http://www.ahotbrew.com/android-dropdown-spinner-example/
         //start
         nature= (Spinner) findViewById(R.id.spinner);
         String[] natures= new String[] {
-                "----V----","Adamant","Bashful","Bold","Brave","Calm","Careful"
+                "Adamant","Bashful","Bold","Brave","Calm","Careful"
                 ,"Docile","Gentle","Hardy","Hasty","Impish","Jolly"
                 ,"Lax","Lonely","Mild","Modest","Naive","Naughty"
                 ,"Quiet","Quirky","Rash","Relaxed","Sassy","Serious"
@@ -43,91 +44,96 @@ public class Calculator extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, natures);
         nature.setAdapter(adapter);
         nature.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            /*
+            * Selects the nature of the Pokemon, and adjusts the multiplier accordingly.
+            * Wrote the code for the if statements myself. The rest I used from the provided url.
+            */
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.v("nature", (String) parent.getItemAtPosition(position));
-                for(int i=0; i<6; i++)
+                for(int i=0; i<5; i++)
                     natMulti[i]=1;
-                if (position == 1) {
-                    natMulti[1] = 1.1;
-                    natMulti[3] = .9;
-                }
-
-                if (position == 3) {
-                    natMulti[2] = 1.1;
-                    natMulti[1] = .9;
-                }
-                if (position == 4) {
-                    natMulti[1] = 1.1;
-                    natMulti[5] = .9;
-                }
-                if (position == 5) {
-                    natMulti[4] = 1.1;
-                    natMulti[1] = .9;
-                }
-                if (position == 6) {
-                    natMulti[4] = 1.1;
-                    natMulti[3] = .9;
-                }
-                if (position == 8) {
-                    natMulti[4] = 1.1;
+                if (position == 0) {
+                    natMulti[0] = 1.1;
                     natMulti[2] = .9;
                 }
+
+                if (position == 2) {
+                    natMulti[1] = 1.1;
+                    natMulti[0] = .9;
+                }
+                if (position == 3) {
+                    natMulti[0] = 1.1;
+                    natMulti[4] = .9;
+                }
+                if (position == 4) {
+                    natMulti[3] = 1.1;
+                    natMulti[0] = .9;
+                }
+                if (position == 5) {
+                    natMulti[3] = 1.1;
+                    natMulti[2] = .9;
+                }
+                if (position == 7) {
+                    natMulti[3] = 1.1;
+                    natMulti[1] = .9;
+                }
+                if (position == 9) {
+                    natMulti[4] = 1.1;
+                    natMulti[1] = .9;
+                }
                 if (position == 10) {
-                    natMulti[5] = 1.1;
+                    natMulti[1] = 1.1;
                     natMulti[2] = .9;
                 }
                 if (position == 11) {
-                    natMulti[2] = 1.1;
-                    natMulti[3] = .9;
+                    natMulti[4] = 1.1;
+                    natMulti[2] = .9;
                 }
                 if (position == 12) {
-                    natMulti[5] = 1.1;
+                    natMulti[1] = 1.1;
                     natMulti[3] = .9;
                 }
                 if (position == 13) {
+                    natMulti[0] = 1.1;
+                    natMulti[1] = .9;
+                }
+                if (position == 14) {
+                    natMulti[2] = 1.1;
+                    natMulti[1] = .9;
+                }
+                if (position == 15) {
+                    natMulti[2] = 1.1;
+                    natMulti[0] = .9;
+                }
+                if (position == 16) {
+                    natMulti[4] = 1.1;
+                    natMulti[3] = .9;
+                }
+                if (position == 17) {
+                    natMulti[0] = 1.1;
+                    natMulti[3] = .9;
+                }
+                if (position == 18) {
                     natMulti[2] = 1.1;
                     natMulti[4] = .9;
                 }
-                if (position == 14) {
-                    natMulti[1] = 1.1;
-                    natMulti[2] = .9;
-                }
-                if (position == 15) {
-                    natMulti[3] = 1.1;
-                    natMulti[2] = .9;
-                }
-                if (position == 16) {
-                    natMulti[3] = 1.1;
-                    natMulti[1] = .9;
-                }
-                if (position == 17) {
-                    natMulti[5] = 1.1;
-                    natMulti[4] = .9;
-                }
-                if (position == 18) {
-                    natMulti[1] = 1.1;
-                    natMulti[4] = .9;
-                }
-                if (position == 19) {
-                    natMulti[3] = 1.1;
-                    natMulti[5] = .9;
+                if (position == 20) {
+                    natMulti[2] = 1.1;
+                    natMulti[3] = .9;
                 }
                 if (position == 21) {
-                    natMulti[3] = 1.1;
+                    natMulti[1] = 1.1;
                     natMulti[4] = .9;
                 }
                 if (position == 22) {
-                    natMulti[2] = 1.1;
-                    natMulti[5] = .9;
+                    natMulti[3] = 1.1;
+                    natMulti[4] = .9;
                 }
-                if (position == 23) {
+                if (position == 24) {
                     natMulti[4] = 1.1;
-                    natMulti[5] = .9;
-                }
-                if (position == 25) {
-                    natMulti[5] = 1.1;
-                    natMulti[1] = .9;
+                    natMulti[0] = .9;
                 }
             }
                 @Override
@@ -138,17 +144,21 @@ public class Calculator extends AppCompatActivity {
 
             );
             //end
-            calcButton=(Button) findViewById(R.id.calc);
 
+            calcButton=(Button) findViewById(R.id.calc);
             calcButton.setOnClickListener(new View.OnClickListener()
 
             {
+                /*
+                * Calculates the Pokemon's stats by reading the number fields, and puts them in the finalstat TextViews.
+                * If the fields are null or out of the range it displays an error on the screen and doesnt calculate the stats.
+                */
                 @Override
                 public void onClick (View v){
-                int hp, atk, def, spAtk, spDef, speed;
-                double baseHp = 0, baseAtk = 0, baseDef = 0, baseSpAtk = 0, baseSpDef = 0, baseSpeed = 0, lvl = 0;
-                double evHp = 0, evAtk = 0, evDef = 0, evSpAtk = 0, evSpDef = 0, evSpeed = 0;
-                double ivHp = 0, ivAtk = 0, ivDef = 0, ivSpAtk = 0, ivSpDef = 0, ivSpeed = 0;
+                int hp, atk, def, spAtk, spDef, speed;  //calculated stat to be displayed
+                double baseHp = 0, baseAtk = 0, baseDef = 0, baseSpAtk = 0, baseSpDef = 0, baseSpeed = 0, lvl = 0;  //base stats read from the text fields
+                double evHp = 0, evAtk = 0, evDef = 0, evSpAtk = 0, evSpDef = 0, evSpeed = 0;   //ev counts from the text fields
+                double ivHp = 0, ivAtk = 0, ivDef = 0, ivSpAtk = 0, ivSpDef = 0, ivSpeed = 0;   //iv counts from the text fields
                 try {
                     EditText num1 = (EditText) findViewById(R.id.baseHp);
                     if (num1 == null) {
@@ -239,7 +249,7 @@ public class Calculator extends AppCompatActivity {
                         }
                     }
 
-                    atk = calculator.calcStat(baseAtk, evAtk, ivAtk, lvl,natMulti[1]);
+                    atk = calculator.calcStat(baseAtk, evAtk, ivAtk, lvl,natMulti[0]);
 
                     num1 = (EditText) findViewById(R.id.baseDef);
                     if (num1 == null) {
@@ -277,7 +287,7 @@ public class Calculator extends AppCompatActivity {
                         }
                     }
 
-                    def = calculator.calcStat(baseDef, evDef, ivDef, lvl, natMulti[2]);
+                    def = calculator.calcStat(baseDef, evDef, ivDef, lvl, natMulti[1]);
 
                     num1 = (EditText) findViewById(R.id.baseSpAtk);
                     if (num1 == null) {
@@ -315,7 +325,7 @@ public class Calculator extends AppCompatActivity {
                         }
                     }
 
-                    spAtk = calculator.calcStat(baseSpAtk, evSpAtk, ivSpAtk, lvl, natMulti[3]);
+                    spAtk = calculator.calcStat(baseSpAtk, evSpAtk, ivSpAtk, lvl, natMulti[2]);
 
                     num1 = (EditText) findViewById(R.id.baseSpDef);
                     if (num1 == null) {
@@ -353,7 +363,7 @@ public class Calculator extends AppCompatActivity {
                         }
                     }
 
-                    spDef = calculator.calcStat(baseSpDef, evSpDef, ivSpDef, lvl, natMulti[4]);
+                    spDef = calculator.calcStat(baseSpDef, evSpDef, ivSpDef, lvl, natMulti[3]);
 
                     num1 = (EditText) findViewById(R.id.baseSpeed);
                     if (num1 == null) {
@@ -390,7 +400,7 @@ public class Calculator extends AppCompatActivity {
                         }
                     }
 
-                    speed = calculator.calcStat(baseSpeed, evSpeed, ivSpeed, lvl, natMulti[5]);
+                    speed = calculator.calcStat(baseSpeed, evSpeed, ivSpeed, lvl, natMulti[4]);
 
                     temp = (TextView) findViewById(R.id.finalHp);
                     if (temp != null) {
